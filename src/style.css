@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(4, 188, 239, 0.998);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 500px;
+    background: rgb(153, 146, 146);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 40px 100px rgb(249, 249, 249);
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: aliceblue;
+    margin-bottom: 20px;
+}
+
+.cajita {
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid aliceblue;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mensaje {
+    padding:  10px;
+    border-radius: 12px;
+    background-color:aliceblue;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.MSJusuario {
+    background-color: rgb(237, 143, 237);
+    color: black;
+    align-self: flex-end;
+}
+
+.MSJia {
+    background-color: aliceblue;
+    color: black;
+    align-self: flex-start;
+}
+
+.espacio-de-entrada {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border:  1px solid aliceblue;
+    border-radius: 7px;
+}
+
+button {
+    background-color: aliceblue;
+    padding: 10px 20px;
+    color: black;
+    border:  none;
+    border-radius: 7px;
+    cursor: pointer;
+    box-shadow: 0 40px 100px rgb(214, 16, 16);
+}
+
+button:hover {
+    background-color: black;
+    color: aliceblue;
+}
+
+button:disabled {
+    background-color: rgb(182, 186, 189);
+}
