@@ -1,88 +1,86 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: rgba(4, 188, 239, 0.998);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background-color: #faf9f6;
+    color: #0c2e26;
+}
+.font-heading {
+    font-family: 'Outfit', sans-serif;
+}
+.text-gradient-forest {
+    background: linear-gradient(135deg, #0c2e26 0%, #1e5c4d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-.contenedor {
-    width: 90%;
-    max-width: 500px;
-    background: rgb(153, 146, 146);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 40px 100px rgb(249, 249, 249);
-}
+/* --- NUEVOS ESTILOS PARA EL CHAT --- */
 
-h1 {
-    text-align: center;
-    font-size: 1.5rem;
-    color: aliceblue;
-    margin-bottom: 20px;
-}
-
-.cajita {
-    height: 400px;
-    overflow-y: auto;
-    border: 1px solid aliceblue;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
+/* Contenedor principal del chat una vez que inicia la conversación */
+#content-wrapper.chat-mode {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    padding-top: 2rem;
+    justify-content: flex-end; /* Alinea los mensajes hacia abajo */
 }
 
-.mensaje {
-    padding:  10px;
-    border-radius: 12px;
-    background-color:aliceblue;
-    max-width: 80%;
+/* Estilo base para cada mensaje del chat */
+.chat-message {
+    padding: 1rem 1.25rem;
+    border-radius: 1.25rem; /* 20px */
+    max-width: 75%;
+    margin-bottom: 1rem;
     word-wrap: break-word;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid rgba(12, 46, 38, 0.05); /* #0c2e26/5 */
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
 }
 
-.MSJusuario {
-    background-color: rgb(237, 143, 237);
-    color: black;
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mensaje del usuario (derecha, color primario) */
+.user-message {
+    background-color: #d65d1e;
+    color: white;
     align-self: flex-end;
+    border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
 }
 
-.MSJia {
-    background-color: aliceblue;
-    color: black;
+/* Mensaje de la IA (izquierda, color neutro) */
+.ai-message {
+    background-color: #ffffff;
+    color: #0c2e26;
     align-self: flex-start;
+    border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
 }
 
-.espacio-de-entrada {
-    display: flex;
-    gap: 10px;
+/* Indicador de carga para el botón de envío */
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
 }
 
-input {
-    flex: 1;
-    padding: 10px;
-    border:  1px solid aliceblue;
-    border-radius: 7px;
-}
-
-button {
-    background-color: aliceblue;
-    padding: 10px 20px;
-    color: black;
-    border:  none;
-    border-radius: 7px;
-    cursor: pointer;
-    box-shadow: 0 40px 100px rgb(214, 16, 16);
-}
-
-button:hover {
-    background-color: black;
-    color: aliceblue;
-}
-
-button:disabled {
-    background-color: rgb(182, 186, 189);
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
